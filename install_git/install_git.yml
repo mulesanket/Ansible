@@ -1,0 +1,11 @@
+---
+- name: Install Git on all managed nodes
+  hosts: all
+  become: yes  # Use sudo to install
+  tasks:
+    - name: Ensure git is installed
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+...
